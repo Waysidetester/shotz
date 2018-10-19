@@ -7,7 +7,7 @@ import events from "./events.js";
 const init = () => {
     locationComponent.testPage();
     movieComponent.testPage();
-    locaitionData.testPage();
+    locaitionData.locationJson();
     movieData.movieJson();
     events.testPage();
     console.log("Main works");
