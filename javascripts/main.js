@@ -8,7 +8,7 @@ const init = () => {
     locationComponent.testPage();
     movieComponent.testPage();
     locaitionData.testPage();
-    movieData.testPage();
+    movieData.movieJson();
     events.testPage();
     console.log("Main works");
 }
