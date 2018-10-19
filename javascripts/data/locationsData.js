@@ -3,11 +3,11 @@ const locationJson = () => {
     .done((data) => {
         const locations = data.locations;
         $.each(locations, (i, o) => {
-            $("#location-here").append(`<div>
+            $("#location-here").append(`<div class="card">
             <img src="${o.img}" alt="${o.name}"/>
-            <p>${o.name}</p>
+            <p class="title">${o.name}</p>
             <p>${o.tod}</p>
-            <p>${o.address}</p>
+            <p class="address">${o.address}</p>
             </div>`);
         });
     })
