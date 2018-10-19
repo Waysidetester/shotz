@@ -1,5 +1,4 @@
 const movieJson = () => {
-
 $.get("../../db/movie.json")
  .done((data) => {
     const movieObject = data.movie;
