@@ -23,6 +23,8 @@ const searchBar = (temp) => {
                 $(v).hide();
             }
     })
+    $("#search-box").val('');
+    $("#search-box").blur();
     }
 }
 const searchEvent = () => {
