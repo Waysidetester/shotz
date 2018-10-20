@@ -9,7 +9,7 @@ const init = () => {
     movieComponent.testPage();
     locaitionData.locationJson();
     movieData.movieJson();
-    events.searchEvent();
+    events.eventApplyer();
 }
 
 init();

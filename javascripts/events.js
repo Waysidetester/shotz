@@ -31,4 +31,17 @@ const searchEvent = () => {
     })
 }
 
-export default {searchEvent};
+const timeFilter = () => {
+    $(".time").on("click", (e) => {
+        $(".card").show();
+        let tod = $(e.currentTarget).text().toLowerCase();
+        $(".card").not(`:contains(${tod})`).hide();
+    })
+}
+
+const eventApplyer = () => {
+    searchEvent();
+    timeFilter();
+}
+
+export default {eventApplyer};
