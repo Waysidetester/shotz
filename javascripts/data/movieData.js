@@ -1,17 +1,14 @@
 const movieJson = () => {
-$.get("../../db/movie.json")
- .done((data) => {
-    const movieObject = data.movie;
-$("#movie-here").html(`<div>
-<p>${movieObject.name}</p>
-<p>${movieObject.genre}</p>
-<p>${movieObject.description}</p>
-<p>${movieObject.release}</p>
-</div>`)
- })
- .fail((error) => {
-      console.error({error});
-  });
+    return new Promise ((resolve, reject) => {
+        $.get("../../db/movie.json")
+        .done((data) => {
+           resolve(data.movie);
+        })
+        .fail((error) => {
+             reject(error);
+         });
+        
+    })
 }
 
 export default {movieJson};
