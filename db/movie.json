@@ -1,8 +1,36 @@
 {
-    "movie": {
-        "name": "Jimothy Dundee",
-        "genre": "Documentary",
-        "release": "June 10th 2025",
-        "description": "Dunder Mifflin employees go on an exciting adventure. Never in their lives did they think they would get to help America's children understand our vast ecosystem"
-    }
+    "movie": [
+        {
+            "movieId": "movie-1",
+            "name": "Jimothy Dundee",
+            "genre": "Documentary",
+            "release": "June 10th 2025",
+            "description": "Dunder Mifflin employees go on an exciting adventure. Never in their lives did they think they would get to help America's children understand our vast ecosystem",
+            "locations": ["location-1","location-2","location-3","location-4","location-5","location-6","location-9","location-12"]
+        },
+        {
+            "movieId": "movie-2",
+            "name": "Bob's Smith",
+            "genre": "Documentary",
+            "release": "October 10th 2020",
+            "description": "Bob's smith does a jig. Will he do his jig impresively enough? Nobody really cares!",
+            "locations": ["location-11","location-12","location-14","location-16","location-12"]
+        },
+        {
+            "movieId": "movie-3",
+            "name": "Break Saw",
+            "genre": "Documentary",
+            "release": "April 10th 2023",
+            "description": "This saw breaks things instead of cuts... Why do people still use it? Join us on this adventure",
+            "locations": ["location-7","location-8","location-10","location-13"]
+        },
+        {
+            "movieId": "movie-4",
+            "name": "Aspirating Orange",
+            "genre": "Documentary",
+            "release": "February 10th 2022",
+            "description": "Humans need oxygen, but plants need carbon dioxide. Explore this dying industry caused by reducing greenhouse gasses",
+            "locations": ["location-16","location-15","location-14","location-4","location-5","location-6","location-9","location-12","location-7","locatoin-8"]            
+        }
+    ]
 }
