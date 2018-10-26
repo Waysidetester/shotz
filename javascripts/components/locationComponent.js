@@ -1,4 +1,18 @@
 import locationsData from "../data/locationsData.js";
+import movieData from "../data/movieData.js";
+
+const locationUsage = (locId) => {
+    let counter = 0;
+    movieData.movieJson().then((data) => {
+        $.each(data, (i, movie) => {
+            let checker = $.inArray(locId, movie.locations);
+            if (checker > -1){
+                counter+=1;
+            }
+        })
+    })
+    
+};
 
 const locationBuilder = (locations) => {
     $.each(locations, (i, o) => {
@@ -8,6 +22,8 @@ const locationBuilder = (locations) => {
         <p>${o.tod}</p>
         <p class="address">${o.address}</p>
         </div>`);
+        locationUsage(o.locationId);
+        console.log("Next Location")
     })
 };
 const locCompExporter = () => {

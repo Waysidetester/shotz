@@ -54,6 +54,13 @@ const locationLooper = (movieLocations) => {
     })
 }
 
+const reInit = () => {
+    defaultFilter();
+    locationComponent.locCompExporter();
+    movieComponent.movCompExporter();
+    eventApplyer();
+}
+
 const pageRefresh = () => {
     $("#filters").html(`<button class="btn btn-danger" id="restart">X</button>`);
     $("#restart").on("click", reInit);
@@ -87,12 +94,6 @@ const defaultFilter = () => {
     <div id="location-here" class="d-flex flex-wrap justify-content-center"></div>`)
 }
 
-const reInit = () => {
-    defaultFilter();
-    locationComponent.locCompExporter();
-    movieComponent.movCompExporter();
-    eventApplyer();
-}
 
 const eventApplyer = () => {
     searchEvent();
