@@ -1,3 +1,6 @@
+import locationComponent from "./components/locationComponent.js";
+import movieComponent from "./components/movieComponent.js";
+
 const searchBar = (temp) => {
     if (temp.keyCode === 13){
         // Shows all cards if any were previously set to hide
@@ -19,7 +22,6 @@ const searchBar = (temp) => {
             });
             // if variable isn't set to true, hide the card being iterated over
             if (cardNotValidator !== true) {
-                cardNotValidator = false;
                 $(v).hide();
             }
     })
@@ -27,6 +29,7 @@ const searchBar = (temp) => {
     $("#search-box").blur();
     }
 }
+
 const searchEvent = () => {
     $("#search-box").on("keyup", (e) => {
         searchBar(e);
@@ -41,9 +44,60 @@ const timeFilter = () => {
     })
 }
 
+const locationLooper = (movieLocations) => {
+    $.each($(".location"), (i, location) => {
+        $.each($(movieLocations), (j, locationId) => {
+            if(locationId === location.id) {
+                $(location).show();
+            }
+        })
+    })
+}
+
+const pageRefresh = () => {
+    $("#filters").html(`<button class="btn btn-danger" id="restart">X</button>`);
+    $("#restart").on("click", reInit);
+}
+
+const replaceMovie = (target) => {
+    pageRefresh();
+    const movieCard = target.currentTarget
+    $("#movie-here").html(movieCard);
+    $(movieCard).removeClass("card");
+};
+
+const movieDetail = (movie) => {
+    $(`#${movie.movieId}`).on("click", (e) => {
+        $(".location").hide();
+        replaceMovie(e);
+        locationLooper(movie.locations);
+    })
+};
+
+const defaultFilter = () => {
+    $("#init").html(`
+    <div id="filters">
+        <input type="text" placeholder="search locations" id="search-box"/>
+        <button type="button" class="btn btn-dark time">Morning</button>
+        <button type="button" class="btn btn-dark time">Afternoon</button>
+        <button type="button" class="btn btn-dark time">Evening</button>
+        <button type="button" class="btn btn-dark time">Night</button>
+    </div>
+    <div id="movie-here" class="d-flex flex-wrap justify-content-center"></div>
+    <div id="location-here" class="d-flex flex-wrap justify-content-center"></div>`)
+}
+
+const reInit = () => {
+    defaultFilter();
+    locationComponent.locCompExporter();
+    movieComponent.movCompExporter();
+    eventApplyer();
+}
+
 const eventApplyer = () => {
     searchEvent();
     timeFilter();
+    
 }
 
-export default {eventApplyer};
+export default {eventApplyer, movieDetail, defaultFilter};

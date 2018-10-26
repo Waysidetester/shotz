@@ -14,7 +14,7 @@
             "genre": "Documentary",
             "release": "October 10th 2020",
             "description": "Bob's smith does a jig. Will he do his jig impresively enough? Nobody really cares!",
-            "locations": ["location-11","location-12","location-14","location-16","location-12"]
+            "locations": ["location-11","location-12","location-14","location-16","location-13"]
         },
         {
             "movieId": "movie-3",
