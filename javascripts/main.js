@@ -8,6 +8,7 @@ $.expr[':'].contains = function(a, i, m) {
   };
 
 const init = () => {
+    events.defaultFilter();
     locationComponent.locCompExporter();
     movieComponent.movCompExporter();
     events.eventApplyer();
