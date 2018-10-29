@@ -7,7 +7,8 @@ const locationUsage = (locId) => {
         $.each(data, (i, movie) => {
             let checker = $.inArray(locId, movie.locations);
             if (checker > -1){
-                counter+=1;
+                counter = counter + 1;
+                console.log(counter);
             }
         })
     })
