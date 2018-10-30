@@ -8,11 +8,13 @@ const locationUsage = (locId) => {
             let checker = $.inArray(locId, movie.locations);
             if (checker > -1){
                 counter = counter + 1;
-                console.log(counter);
+                // return counter;
             }
+            
         })
+        console.log(counter);
+        return counter;
     })
-    
 };
 
 const locationBuilder = (locations) => {
@@ -22,9 +24,8 @@ const locationBuilder = (locations) => {
         <p class="title">${o.name}</p>
         <p>${o.tod}</p>
         <p class="address">${o.address}</p>
+        <p>${locationUsage(o.locationId)}</p>
         </div>`);
-        locationUsage(o.locationId);
-        console.log("Next Location")
     })
 };
 const locCompExporter = () => {
