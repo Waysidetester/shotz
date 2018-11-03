@@ -1,5 +1,7 @@
 # Shotz
 
+![main view screenshot](./images/screenshot.PNG)
+
 ## Purpose
 
 I attempt to dynamically load asynchronous data to the DOM using ajax syntax and modularly edit the dom with modules from Chrome. 
